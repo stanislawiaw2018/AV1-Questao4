@@ -44,7 +44,7 @@ class Caixa(models.Model):
     numero = models.IntegerField("Número da Caixa",null=False,blank=False)
     etiqueta = models.CharField("Etiqueta",max_length=20,null=False,blank=False)
     cor = models.CharField("Cor da Caixa", max_length=20,null=False,blank=False)
-    revista = models.ForeignKey( Revista,null=False,blank=False)
+    revista = models.ForeignKey( Revista,on_delete=models.CASCADE,null=True,blank=True)
 
     def __str__(self):
         return self.numero
